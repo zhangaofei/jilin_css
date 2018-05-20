@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!--<meta http-equiv="X-UA-Compatible" content="IE=8,IE=9,IE=10,IE=edge">-->
+  <meta http-equiv="X-UA-Compatible" content="IE=8,IE=9,IE=10,IE=11,IE=EDGE,Chrome=1" />
+  <meta name="renderer" content="webkit">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>test</title>
+
+  <!-- Bootstrap -->
+  <link href="js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      position: relative;
+      background: url("images/ctc_login/bg.png");
+      background-size: cover;
+      min-height: 650px;
+    }
+
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .u_main {
+
+      /*top: 50%;*/
+      /*left: 50%;*/
+      /*transform: translate(-50%, -50%);*/
+      /*-ms-transform:translate(-50%, -50%);*/
+      /*margin-top: -50px;*/
+      position: absolute;
+      min-width: 1170px;
+
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 500px;
+      margin: auto;
+    }
+
+    .u_top {
+      margin: auto;
+      /*width: 55%;*/
+      width: 63%;
+      overflow: hidden;
+      margin-top: -50px;
+      margin-bottom: 50px;
+    }
+
+    .u_top li {
+      float: left;
+      height: 72px;
+      line-height: 72px;
+      font-size: 22px;
+    }
+
+    .u_top .li_a {
+      padding-right: 26px;
+    }
+
+    .u_top .li_b {
+      color: #fff;
+      border-left: 3px solid;
+      padding-left: 30px;
+    }
+
+    .u_middle {
+      overflow: hidden;
+      margin: auto;
+      margin-left: 200px;
+      /*margin-top: -50px;*/
+    }
+
+    .u_head {
+      font-size: 20px;
+      border-bottom: 1px solid lightgrey;
+      padding: 15px;
+      margin-top: -7px;
+    }
+
+    .u_form {
+      background-color: #E6EBF2;
+      padding: 10px;
+      width: 48%;
+      margin: auto
+    }
+
+    .u_form2 {
+      /*height: 303px;*/
+      background: #E3E3E3;
+      padding: 10px;
+      margin: auto;
+      float: left;
+    }
+
+    .form_li {
+      padding: 5px;
+    }
+  </style>
+  <!--[if lt IE 9]>
+  <script src="js/respond.min.js"></script>
+  <script src="js/html5shiv.min.js"></script>
+  <![endif]-->
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+  <script src="js/jquery@1.9.1.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="container u_main">
+  <div class="u_top">
+    <ul>
+      <li class="li_a"><img src="images/ctc_login/logo.png" alt=""></li>
+      <li class="li_b">中国电信吉林公司<i>SSL VPN</i>远程接入平台</li>
+    </ul>
+  </div>
+  <div class="u_middle">
+    <form class="form-horizontal u_form" role="form" style="float:left;">
+      <p class="text-center u_head">密码登录</p>
+      <div class="form-group">
+        <label for="u_name" class="col-sm-4 control-label col_lab">用户名：</label>
+        <div class="col-sm-6 col_put">
+          <input type="text" class="form-control u_name" id="u_name" name="" value="" placeholder="请输入名字">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="u_password" class="col-sm-4 control-label col_lab">密码：</label>
+        <div class="col-sm-6 col_put" >
+          <input type="text" class="form-control u_password" id="u_password" name="" value="" placeholder="请输入密码">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="u_group" class="col-sm-4 control-label col_lab">选择列表：</label>
+        <div class="col-sm-6 col_put">
+          <select class="form-control u_group" id="u_group" name="" value="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <a href="resetPassword.html" style="float: right;padding-top: 5px">重置密码</a>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-6 col_put btn_ie8">
+          <button type="submit" class="btn btn-primary btn-bg btn_login" style="width: 100%;" >登录</button>
+        </div>
+      </div>
+    </form>
+    <form class="form-horizontal u_form2" role="form" style="padding-bottom: 4px">
+      <h4 class="text-center">技术服务中心</h4>
+      <ul style="text-align: center" class="form_ul">
+        <li class="form_li">下载 <img src="images/ctc_login/pointer.png" alt=""> 用户使用手册</li>
+        <li class="form_li">技术支持热线：400-820-0095</li>
+        <li class="form_li">技术支持QQ1：1940530699</li>
+        <li class="form_li">技术支持QQ2：2673422660</li>
+        <li class="form_li">服务时间：9:00-18:00</li>
+        <div style="visibility: hidden">
+          <li>null</li>
+          <li>null</li>
+          <li>null</li>
+          <li>null</li>
+          <li>null</li>
+        </div>
+      </ul>
+    </form>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    $(".btn_login").click(function () {
+      $.ajax({
+        type: "post",
+        url: 'http://XXXX.com/',
+        data: data,
+        dataType: 'json',
+        success: function (data) {
+
+        }
+      });
+    });
+  })
+
+</script>
+</body>
+
+</html>

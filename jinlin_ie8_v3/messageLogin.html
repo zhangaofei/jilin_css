@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=8,IE=9,IE=10,IE=11,IE=EDGE,Chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>message</title>
+
+  <!-- Bootstrap -->
+  <link href="js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      position: relative;
+      background: url("images/ctc_login/bg.png");
+      min-height: 650px;
+      background-size: cover;
+      min-width: 1250px;
+    }
+
+    ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .u_main {
+      /*position: absolute;*/
+      /*top: 50%;*/
+      /*left: 50%;*/
+      /*transform: translate(-50%, -50%);*/
+      /*margin-top: -50px;*/
+      position: absolute;
+      min-width: 1170px;
+
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 500px;
+      margin: auto;
+    }
+
+    .u_top {
+      margin: auto;
+      width: 54%;
+      overflow: hidden;
+      /*margin-top: -50px;*/
+      margin-bottom: 50px;
+    }
+
+    .u_top li {
+      float: left;
+      height: 72px;
+      line-height: 72px;
+      font-size: 22px;
+    }
+
+    .u_top .li_a {
+      padding-right: 26px;
+    }
+
+    .u_top .li_b {
+      color: #fff;
+      border-left: 3px solid;
+      padding-left: 30px;
+    }
+
+    .u_middle {
+      overflow: hidden;
+      margin: auto;
+
+      position: relative;
+      height: 340px;
+    }
+
+    .u_head {
+      font-size: 20px;
+      border-bottom: 1px solid lightgrey;
+      padding: 15px;
+      margin-top: -7px;
+    }
+
+    .u_form {
+      background-color: #E6EBF2;
+      padding: 10px;
+      width: 51%;
+      margin: auto;
+      /***********/
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .u_form2 {
+      padding: 10px;
+      margin: auto;
+      float: left;
+      margin-top: -30px
+    }
+
+    .form_li {
+      padding: 5px;
+    }
+  </style>
+
+
+  <!--[if lt IE 9]>
+  <script src="js/respond.min.js"></script>
+  <script src="js/html5shiv.min.js"></script>
+  <![endif]-->
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+  <script src="js/jquery@1.9.1.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container u_main">
+  <div class="u_top">
+    <ul>
+      <li class="li_a"><img src="images/ctc_login/logo.png" alt=""></li>
+      <li class="li_b">中国电信吉林公司<i>SSL VPN</i>远程接入平台</li>
+    </ul>
+  </div>
+  <div class="u_middle">
+    <form class="form-horizontal u_form" role="form" style="">
+      <p class="text-center u_head">
+        <a href="login.html"><img src="images/ctc_reset_password/back.png" alt="" style="float: left"></a>
+        <span>短信登录</span>
+      </p>
+      <div class="form-group">
+        <label for="u_message" class="col-sm-4 control-label col_lab">短信验证：</label>
+        <div class="col-sm-4 col_put msg_code">
+          <input type="text" class="form-control u_message" id="u_message"
+                 placeholder="请输入短信验证">
+
+        </div>
+        <!--onclick="settime(this)"-->
+        <input type="button" id="getTelCode" class="btn btn-primary btn-sm getTelCode" value="获取验证码"
+               style="padding: 7px 10px"></input>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-6 col_put btn_ie8">
+          <button type="submit" class="btn btn-primary btn-bg" style="width: 100%;">确认修改</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<!--https://cdn.bootcss.com/jquery/3.3.1/jquery.js-->
+<!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+<script type="text/javascript">
+  var wait = 60;
+
+  function time(o) {
+    if (wait == 0) {
+      o.removeAttribute("disabled");
+      o.value = "获取验证码";
+      wait = 60;
+    } else {
+
+      o.setAttribute("disabled", true);
+      o.value = "重新发送(" + wait + ")";
+      wait--;
+      setTimeout(function () {
+          time(o)
+        },
+        1000)
+    }
+  }
+
+  document.getElementById("getTelCode").onclick = function () {
+    time(this);
+  }
+</script>
+</body>
+</html>
